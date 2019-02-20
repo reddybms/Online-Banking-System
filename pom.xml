@@ -47,6 +47,13 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+	        <dependency>
+                        <groupId>ojdbc</groupId>  
+                        <artifactId>com.oracle</artifactId>  
+                        <version>6.0</version> 
+                        <scope>system</scope>
+                        <systemPath>/etc/ansible/java/jre/lib/ojdbc6.jar</systemPath>
+                </dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
