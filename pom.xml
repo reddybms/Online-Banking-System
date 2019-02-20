@@ -104,8 +104,8 @@
                     <sonar.password>admin</sonar.password>
                     <sonar.verbose>true</sonar.verbose>
                     <sonar.projectKey>CICD</sonar.projectKey>
-                    <sonar.sources>/var/lib/jenkins/workspace/$JOB_NAME/src/com/green/bank</sonar.sources>
-                    <sonar.binaries>/var/lib/jenkins/workspace/$JOB_NAME/target/classes/com/green/bank</sonar.binaries>	
+                    <sonar.sources>/var/lib/jenkins/workspace/SonarQube_CodeTest/src/com/green/bank</sonar.sources>
+                    <sonar.binaries>/var/lib/jenkins/workspace/SonarQube_CodeTest/target/classes/com/green/bank</sonar.binaries>	
 	    </properties>
           </profile>
         </profiles>
