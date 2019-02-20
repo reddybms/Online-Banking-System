@@ -20,28 +20,28 @@
             <groupId>org.sonarsource.scanner.maven</groupId>
             <artifactId>sonar-maven-plugin</artifactId>
             <version>3.6.0.1398</version>
-        </plugin>
-	    <plugin>
+       </plugin>
+      <plugin>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.9</version>
-        </plugin>
+      </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.0.0</version>
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
-      </plugin>
+     </plugin>
     </plugins>
   </build>
   <dependencies>
-  <dependency>
+                <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-<dependency>
+                <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
@@ -64,11 +64,11 @@
 			<version>9.2-1004-jdbc4</version>
 		</dependency>
 		<dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.9</version>
-	</dependency>
-	<dependency>
+		         <groupId>mysql</groupId>
+		         <artifactId>mysql-connector-java</artifactId>
+		         <version>5.1.9</version>
+	        </dependency>
+	        <dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.2.2</version>
@@ -78,35 +78,28 @@
 			<artifactId>commons-pool</artifactId>
 			<version>1.5.3</version>
 		</dependency>
-	     <dependency>
-		<groupId>org.sonarsource.scanner.maven</groupId>
-		<artifactId>sonar-maven-plugin</artifactId>
-		<version>3.6.0.1398</version>
-	    </dependency>
-	</dependencies>	
+	        <dependency>
+		        <groupId>org.sonarsource.scanner.maven</groupId>
+		        <artifactId>sonar-maven-plugin</artifactId>
+		        <version>3.6.0.1398</version>
+	         </dependency>
+   </dependencies>	
 	<profiles>
-<profile>
-<id>sonar</id>
-<activation>
-<activeByDefault>true</activeByDefault>
-</activation>
-<properties>
-<!-- Optional URL to server. Default value is http://localhost:9000 -->
-<sonar.host.url>
-http://ec2-13-58-155-70.us-east-2.compute.amazonaws.com:9000/sonar
-</sonar.host.url>
-<sonar.login>
-	admin
-</sonar.login>
-<sonar.password>
-	admin
-</sonar.password>
-<sonar.verbose>true</sonar.verbose>
-<sonar.projectKey>CICD</sonar.projectKey>
-<sonar.sources>/var/lib/jenkins/workspace/$JOB_NAME/src/com/green/bank</sonar.sources>
-<sonar.binaries>/var/lib/jenkins/workspace/$JOB_NAME/target/classes/com/green/bank</sonar.binaries>	
-	
-</properties>
-</profile>
-</profiles>
+          <profile>
+            <id>sonar</id>
+             <activation>
+                 <activeByDefault>true</activeByDefault>
+             </activation>
+             <properties>
+                    <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                    <sonar.host.url>http://ec2-13-58-155-70.us-east-2.compute.amazonaws.com:9000/sonar</sonar.host.url>
+                    <sonar.login>admin</sonar.login>
+                    <sonar.password>admin</sonar.password>
+                    <sonar.verbose>true</sonar.verbose>
+                    <sonar.projectKey>CICD</sonar.projectKey>
+                    <sonar.sources>/var/lib/jenkins/workspace/$JOB_NAME/src/com/green/bank</sonar.sources>
+                    <sonar.binaries>/var/lib/jenkins/workspace/$JOB_NAME/target/classes/com/green/bank</sonar.binaries>	
+	    </properties>
+          </profile>
+        </profiles>
 </project>
