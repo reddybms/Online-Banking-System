@@ -32,8 +32,29 @@
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
+	
      </plugin>
-    </plugins>
+     <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+           <execution>
+            <phase>initialize</phase>
+              <goals>
+                <goal>install-file</goal>
+              </goals>
+               <configuration>
+	          <groupId>ojdbc6</groupId>  
+                  <artifactId>com.oracle</artifactId>  
+                  <version>6.0</version> 
+                  <file>/etc/ansible/java/jre/lib/ojdbc6.jar</file>
+	          <packaging>jar</packaging>
+	       </configuration>
+	     </execution>
+	     </executions>		
+     </plugin>
+	     
   </build>
   <dependencies>
                 <dependency>
@@ -48,12 +69,12 @@
 			<scope>provided</scope>
 		</dependency>
 	        <dependency>
-                        <groupId>ojdbc</groupId>  
+                        <groupId>ojdbc6</groupId>  
                         <artifactId>com.oracle</artifactId>  
                         <version>6.0</version> 
-                        <scope>system</scope>
-                        <systemPath>/etc/ansible/java/jre/lib/ojdbc6.jar</systemPath>
-                </dependency>
+                        <file>/etc/ansible/java/jre/lib/ojdbc6.jar</file>
+			<packaging>jar</packaging>
+	        </dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
