@@ -48,8 +48,7 @@
                   <artifactId>com.oracle</artifactId>  
                   <version>6.0</version> 
 	          <packaging>jar</packaging>
-		  <scope>system</scope>
-		  <systemPath>/etc/ansible/java/jre/lib/ojdbc6.jar</systemPath>
+		  <file>/etc/ansible/java/jre/lib/ojdbc6.jar</file>
 	       </configuration>
 	     </execution>
 	     </executions>		
