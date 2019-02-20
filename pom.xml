@@ -31,8 +31,7 @@
         <version>3.0.0</version>
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
-        </configuration>
-	
+        </configuration>	
      </plugin>
      <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -53,8 +52,7 @@
 	       </configuration>
 	     </execution>
 	     </executions>		
-     </plugin>
-	     
+     </plugin>	     
   </build>
   <dependencies>
                 <dependency>
