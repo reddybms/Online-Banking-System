@@ -21,6 +21,11 @@
             <artifactId>sonar-maven-plugin</artifactId>
             <version>3.6.0.1398</version>
         </plugin>
+	    <plugin>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+        </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.0.0</version>
