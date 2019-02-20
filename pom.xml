@@ -33,28 +33,7 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>	
      </plugin>
-     <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>2.5</version>
-        <executions>
-           <execution>
-            <phase>initialize</phase>
-              <goals>
-                <goal>install:install</goal>
-              </goals>
-               <configuration>
-	          <groupId>ojdbc6</groupId>  
-                  <artifactId>com.oracle</artifactId>  
-                  <version>6.0</version> 
-	          <packaging>jar</packaging>
-		  <scope>system</scope>
-		  <systemPath>/etc/ansible/java/jre/lib/ojdbc6.jar</systemPath>
-	       </configuration>
-	     </execution>
-	     </executions>		
-     </plugin>
-   </plugins>	      
+      </plugins>	      
   </build>
   <dependencies>
                 <dependency>
