@@ -41,7 +41,7 @@
            <execution>
             <phase>initialize</phase>
               <goals>
-                <goal>initialize</goal>
+                <goal>install</goal>
               </goals>
                <configuration>
 	          <groupId>ojdbc6</groupId>  
