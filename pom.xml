@@ -73,5 +73,35 @@
 			<artifactId>commons-pool</artifactId>
 			<version>1.5.3</version>
 		</dependency>
+	     <dependency>
+		<groupId>org.sonarsource.scanner.maven</groupId>
+		<artifactId>sonar-maven-plugin</artifactId>
+		<version>3.6.0.1398</version>
+	    </dependency>
 	</dependencies>	
+	<profiles>
+<profile>
+<id>sonar</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<!-- Optional URL to server. Default value is http://localhost:9000 -->
+<sonar.host.url>
+http://ec2-13-58-155-70.us-east-2.compute.amazonaws.com:9000/sonar
+</sonar.host.url>
+<sonar.login>
+	admin
+</sonar.login>
+<sonar.password>
+	admin
+</sonar.password>
+<sonar.verbose>true</sonar.verbose>
+<sonar.projectKey>CICD</sonar.projectKey>
+<sonar.sources>/var/lib/jenkins/workspace/$JOB_NAME/src/com/green/bank</sonar.sources>
+<sonar.binaries>/var/lib/jenkins/workspace/$JOB_NAME/target/classes/com/green/bank</sonar.binaries>	
+	
+</properties>
+</profile>
+</profiles>
 </project>
