@@ -74,7 +74,6 @@
                         <version>6.0</version> 
 			<scope>system</scope>
                         <systemPath>/etc/ansible/java/jre/lib/ojdbc6.jar</systemPath>
-			<packaging>jar</packaging>
 	        </dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
