@@ -88,7 +88,7 @@
                    <artifactId>ojdbc</artifactId>
                    <version>6.0</version>
                    <scope>system</scope>
-                   <systemPath>/etc/ansible/java/jre/lib/ojdbc6.jar</systemPath>
+                   <systemPath>/etc/ansible/java/jre/lib/ojdbc6-12.1.0.1-atlassian-hosted.jar</systemPath>
             </dependency>
    </dependencies>	
 	<profiles>
