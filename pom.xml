@@ -52,7 +52,7 @@
                         <artifactId>com.oracle</artifactId>  
                         <version>6.0</version> 
 			<scope>system</scope>
-                        <systemPath>/home/ansible/.m2/repository/com/oracle/ojdbc/6.0/ojdbc-6.0.jar</systemPath>
+                        <systemPath>/etc/ansible/java/jre/lib/ojdbc6.jar</systemPath>
 	        </dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
