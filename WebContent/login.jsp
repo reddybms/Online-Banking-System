@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="jumbotron col-md-6 col-md-offset-3"
 				style="margin-top: 50px">
-				<h1 style="margin-bottom: 30px" class="col-md-10 col-md-offset-1">Sign
+				<h1 style="margin-bottom: 30px" class="col-md-10 col-md-offset-1">Log
 					in to your account</h1>
 				<div class="row">
 					<div class="col-md-6 col-md-offset-2">
