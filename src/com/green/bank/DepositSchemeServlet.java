@@ -20,8 +20,6 @@ import com.green.bank.database.JDBC_Connect;
 import com.green.bank.model.AccountModel;
 import com.green.bank.model.DepositSchemeModel;
 
-import oracle.net.aso.b;
-import oracle.net.aso.d;
 
 public class DepositSchemeServlet extends HttpServlet {
 	String account_no, deposit_amount, value;
