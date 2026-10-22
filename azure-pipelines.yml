@@ -1,0 +1,43 @@
+# Azure Pipelines: build with Maven, copy the WAR to the Azure VM over SSH,
+# and restart Tomcat. No SonarQube.
+#
+# Replace 'azure-vm-ssh' with the name of your SSH service connection.
+
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: Maven@3
+    displayName: 'Build and test with Maven'
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean package'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      jdkVersionOption: 'default'
+
+  - task: CopyFilesOverSSH@0
+    displayName: 'Copy WAR to the VM'
+    inputs:
+      sshEndpoint: 'azure-vm-ssh'
+      sourceFolder: '$(System.DefaultWorkingDirectory)'
+      contents: '**/target/*.war'
+      targetFolder: '/tmp/deploy'
+      flattenFolders: true
+      cleanTargetFolder: true
+      overwrite: true
+
+  - task: SSH@0
+    displayName: 'Deploy to Tomcat and restart'
+    inputs:
+      sshEndpoint: 'azure-vm-ssh'
+      runOptions: 'inline'
+      inline: |
+        sudo systemctl stop tomcat
+        sudo rm -rf /opt/tomcat/webapps/bankapp /opt/tomcat/webapps/bankapp.war
+        sudo cp /tmp/deploy/*.war /opt/tomcat/webapps/bankapp.war
+        sudo chown tomcat:tomcat /opt/tomcat/webapps/bankapp.war
+        sudo systemctl start tomcat
