@@ -23,11 +23,10 @@ steps:
     displayName: 'Copy WAR to the VM'
     inputs:
       sshEndpoint: 'azure-vm-ssh'
-      sourceFolder: '$(System.DefaultWorkingDirectory)'
-      contents: '**/target/*.war'
-      targetFolder: '/tmp/deploy'
-      flattenFolders: true
-      cleanTargetFolder: true
+      sourceFolder: '$(System.DefaultWorkingDirectory)/target'
+      contents: '*.war'
+      targetFolder: '/tmp'
+      cleanTargetFolder: false
       overwrite: true
 
   - task: SSH@0
@@ -35,10 +34,9 @@ steps:
     inputs:
       sshEndpoint: 'azure-vm-ssh'
       runOptions: 'inline'
-      inline: 
-        mkdir -p /tmp/deploy|
+      inline: |
         sudo systemctl stop tomcat
         sudo rm -rf /opt/tomcat/webapps/bankapp /opt/tomcat/webapps/bankapp.war
-        sudo cp /tmp/deploy/*.war /opt/tomcat/webapps/bankapp.war
+        sudo cp /tmp/OnlineBankingSystem-*.war /opt/tomcat/webapps/bankapp.war
         sudo chown tomcat:tomcat /opt/tomcat/webapps/bankapp.war
         sudo systemctl start tomcat
