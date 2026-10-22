@@ -35,7 +35,8 @@ steps:
     inputs:
       sshEndpoint: 'azure-vm-ssh'
       runOptions: 'inline'
-      inline: |
+      inline: 
+        mkdir -p /tmp/deploy|
         sudo systemctl stop tomcat
         sudo rm -rf /opt/tomcat/webapps/bankapp /opt/tomcat/webapps/bankapp.war
         sudo cp /tmp/deploy/*.war /opt/tomcat/webapps/bankapp.war
